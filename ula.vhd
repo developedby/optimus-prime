@@ -7,7 +7,7 @@ entity ula is
     entr_a, entr_b: in unsigned(15 downto 0);
     sel_op: in unsigned(2 downto 0);
     saida: out unsigned(15 downto 0);
-    entr_iguais, a_maior_b: out unsigned;
+    entr_iguais, a_maior_b: out unsigned
   );
 end entity;
 

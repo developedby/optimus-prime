@@ -1,0 +1,7 @@
+v 4
+file . "../testes/ula_teste.vhd" "1f9bae99dc89dd4614d2f52b4918324e3c27f3f0" "20180420000534.242":
+  entity ula_teste at 1( 0) + 0 on 13;
+  architecture arq_ula_teste of ula_teste at 8( 103) + 0 on 14;
+file . "../src/ula.vhd" "211d922618f4529e2fe7658956feafb59cd55748" "20180420000017.334":
+  entity ula at 1( 0) + 0 on 11;
+  architecture arq_ula of ula at 14( 285) + 0 on 12;
