@@ -1,7 +1,19 @@
 v 4
+file . "../src/ula_com_banco_reg.vhd" "3a8c1786629cef98f4712c9807a2aef2365f00ef" "20180511011421.691":
+  entity ula_com_banco_reg at 1( 0) + 0 on 27;
+  architecture arq_ula_com_banco_reg of ula_com_banco_reg at 16( 430) + 0 on 28;
+file . "../src/reg16bit.vhd" "d5bcb17762abe7301df217c4cd77d7eeb7a1c896" "20180511005344.495":
+  entity reg16bit at 1( 0) + 0 on 17;
+  architecture arq_reg16bit of reg16bit at 13( 235) + 0 on 18;
 file . "../testes/ula_teste.vhd" "1f9bae99dc89dd4614d2f52b4918324e3c27f3f0" "20180420000534.242":
   entity ula_teste at 1( 0) + 0 on 13;
   architecture arq_ula_teste of ula_teste at 8( 103) + 0 on 14;
-file . "../src/ula.vhd" "211d922618f4529e2fe7658956feafb59cd55748" "20180420000017.334":
-  entity ula at 1( 0) + 0 on 11;
-  architecture arq_ula of ula at 14( 285) + 0 on 12;
+file . "../src/ula.vhd" "211d922618f4529e2fe7658956feafb59cd55748" "20180511005314.201":
+  entity ula at 1( 0) + 0 on 15;
+  architecture arq_ula of ula at 14( 285) + 0 on 16;
+file . "../src/banco_reg.vhd" "34895c795e9ebaee7d7c688189c871aa5efc20f3" "20180511005357.750":
+  entity banco_reg at 1( 0) + 0 on 19;
+  architecture arq_banco_reg of banco_reg at 19( 466) + 0 on 20;
+file . "../testes/ula_com_banco_reg_teste.vhd" "60509d318924e53b07a3c073bdcc568bac95fba6" "20180511011451.784":
+  entity ula_com_banco_reg_teste at 1( 0) + 0 on 29;
+  architecture arq_ula_com_banco_reg_teste of ula_com_banco_reg_teste at 8( 117) + 0 on 30;

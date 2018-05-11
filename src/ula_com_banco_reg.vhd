@@ -4,11 +4,12 @@ use ieee.numeric_std.all;
 
 entity ula_com_banco_reg is
   port (
+    sel_reg_le1, sel_reg_le2, sel_reg_escr: in unsigned(2 downto 0);
     entr_ext_ula: in unsigned(15 downto 0);
     sel_op_ula: in unsigned(1 downto 0);
     clk, rst, hab_escr, sel_orig: in std_logic;
     saida: out unsigned(15 downto 0);
-    entr_iguais_ula, a_maior_b_ula, a_menor_b_ula: out std_logic;
+    entr_iguais_ula, a_maior_b_ula, a_menor_b_ula: out std_logic
   );
 end entity;
 
@@ -35,9 +36,6 @@ architecture arq_ula_com_banco_reg of ula_com_banco_reg is
   );
   end component;
   
-  signal sel_reg_le1: unsigned(2 downto 0);
-  signal sel_reg_le2: unsigned(2 downto 0);
-  signal sel_reg_escr: unsigned(2 downto 0);
   signal entr_dados_banco: unsigned(15 downto 0);
   signal saida_banco1: unsigned(15 downto 0);
   signal saida_banco2: unsigned(15 downto 0);
@@ -49,7 +47,7 @@ architecture arq_ula_com_banco_reg of ula_com_banco_reg is
   signal mux_ula_saida: unsigned (15 downto 0);
 
 begin
-  ula:
+  a_ula:
   ula port map(
     entr_a => entr_ula1,
     entr_b => entr_ula2,
@@ -58,9 +56,9 @@ begin
     entr_iguais => entr_iguais_ula,
     a_maior_b => a_maior_b_ula,
     a_menor_b => a_menor_b_ula
-  )
+  );
 
-  banco_reg:
+  o_banco_reg:
   banco_reg port map(
     sel_reg_le1 => sel_reg_le1,
     sel_reg_le2 => sel_reg_le2,
@@ -71,7 +69,7 @@ begin
     rst => rst,
     saida_dados1 => saida_banco1,
     saida_dados2 => saida_banco2
-  )
+  );
 
   --Ligando sinais nos outros
   entr_dados_banco <= saida_ula;
@@ -79,6 +77,7 @@ begin
   entr_ula2 <= mux_ula_saida;
   mux_ula_entr1 <= saida_banco2;
   mux_ula_entr2 <= entr_ext_ula;
+  saida <= saida_ula;
 
   -- Mux de selecao da ULA
   mux_ula_saida <= mux_ula_entr1 when sel_orig = '0' else
