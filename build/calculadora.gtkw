@@ -1,0 +1,67 @@
+[*]
+[*] GTKWave Analyzer v3.3.66 (w)1999-2015 BSI
+[*] Fri May 25 03:56:31 2018
+[*]
+[dumpfile] "/home/lucca/Desktop/optimus-prime/build/calc.ghw"
+[dumpfile_mtime] "Fri May 25 03:52:39 2018"
+[dumpfile_size] 80526
+[savefile] "/home/lucca/Desktop/optimus-prime/build/calculadora.gtkw"
+[timestart] 0
+[size] 1855 1056
+[pos] -1 -1
+*-26.960875 28000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.calc_teste.
+[treeopen] top.calc_teste.unidade_teste.
+[treeopen] top.calc_teste.unidade_teste.o_banco_reg.registradores[0].
+[treeopen] top.calc_teste.unidade_teste.o_banco_reg.registradores[0].regx.
+[treeopen] top.calc_teste.unidade_teste.o_banco_reg.registradores[3].
+[treeopen] top.calc_teste.unidade_teste.o_banco_reg.registradores[3].regx.
+[treeopen] top.calc_teste.unidade_teste.o_banco_reg.registradores[4].
+[treeopen] top.calc_teste.unidade_teste.o_banco_reg.registradores[4].regx.
+[treeopen] top.calc_teste.unidade_teste.o_banco_reg.registradores[5].
+[treeopen] top.calc_teste.unidade_teste.o_banco_reg.registradores[5].regx.
+[sst_width] 225
+[signals_width] 158
+[sst_expanded] 1
+[sst_vpaned_height] 320
+@28
+top.calc_teste.rst
+top.calc_teste.clk
+@200
+-
+@24
+#{top.calc_teste.unidade_teste.pc_saida[14:0]} top.calc_teste.unidade_teste.pc_saida[14] top.calc_teste.unidade_teste.pc_saida[13] top.calc_teste.unidade_teste.pc_saida[12] top.calc_teste.unidade_teste.pc_saida[11] top.calc_teste.unidade_teste.pc_saida[10] top.calc_teste.unidade_teste.pc_saida[9] top.calc_teste.unidade_teste.pc_saida[8] top.calc_teste.unidade_teste.pc_saida[7] top.calc_teste.unidade_teste.pc_saida[6] top.calc_teste.unidade_teste.pc_saida[5] top.calc_teste.unidade_teste.pc_saida[4] top.calc_teste.unidade_teste.pc_saida[3] top.calc_teste.unidade_teste.pc_saida[2] top.calc_teste.unidade_teste.pc_saida[1] top.calc_teste.unidade_teste.pc_saida[0]
+@200
+-
+@22
+#{top.calc_teste.unidade_teste.rom_saida[13:0]} top.calc_teste.unidade_teste.rom_saida[13] top.calc_teste.unidade_teste.rom_saida[12] top.calc_teste.unidade_teste.rom_saida[11] top.calc_teste.unidade_teste.rom_saida[10] top.calc_teste.unidade_teste.rom_saida[9] top.calc_teste.unidade_teste.rom_saida[8] top.calc_teste.unidade_teste.rom_saida[7] top.calc_teste.unidade_teste.rom_saida[6] top.calc_teste.unidade_teste.rom_saida[5] top.calc_teste.unidade_teste.rom_saida[4] top.calc_teste.unidade_teste.rom_saida[3] top.calc_teste.unidade_teste.rom_saida[2] top.calc_teste.unidade_teste.rom_saida[1] top.calc_teste.unidade_teste.rom_saida[0]
+@200
+-
+@24
+#{top.calc_teste.unidade_teste.entr_ula_1[15:0]} top.calc_teste.unidade_teste.entr_ula_1[15] top.calc_teste.unidade_teste.entr_ula_1[14] top.calc_teste.unidade_teste.entr_ula_1[13] top.calc_teste.unidade_teste.entr_ula_1[12] top.calc_teste.unidade_teste.entr_ula_1[11] top.calc_teste.unidade_teste.entr_ula_1[10] top.calc_teste.unidade_teste.entr_ula_1[9] top.calc_teste.unidade_teste.entr_ula_1[8] top.calc_teste.unidade_teste.entr_ula_1[7] top.calc_teste.unidade_teste.entr_ula_1[6] top.calc_teste.unidade_teste.entr_ula_1[5] top.calc_teste.unidade_teste.entr_ula_1[4] top.calc_teste.unidade_teste.entr_ula_1[3] top.calc_teste.unidade_teste.entr_ula_1[2] top.calc_teste.unidade_teste.entr_ula_1[1] top.calc_teste.unidade_teste.entr_ula_1[0]
+#{top.calc_teste.unidade_teste.entr_ula_2[15:0]} top.calc_teste.unidade_teste.entr_ula_2[15] top.calc_teste.unidade_teste.entr_ula_2[14] top.calc_teste.unidade_teste.entr_ula_2[13] top.calc_teste.unidade_teste.entr_ula_2[12] top.calc_teste.unidade_teste.entr_ula_2[11] top.calc_teste.unidade_teste.entr_ula_2[10] top.calc_teste.unidade_teste.entr_ula_2[9] top.calc_teste.unidade_teste.entr_ula_2[8] top.calc_teste.unidade_teste.entr_ula_2[7] top.calc_teste.unidade_teste.entr_ula_2[6] top.calc_teste.unidade_teste.entr_ula_2[5] top.calc_teste.unidade_teste.entr_ula_2[4] top.calc_teste.unidade_teste.entr_ula_2[3] top.calc_teste.unidade_teste.entr_ula_2[2] top.calc_teste.unidade_teste.entr_ula_2[1] top.calc_teste.unidade_teste.entr_ula_2[0]
+@200
+-
+@24
+#{top.calc_teste.unidade_teste.saida_ula[15:0]} top.calc_teste.unidade_teste.saida_ula[15] top.calc_teste.unidade_teste.saida_ula[14] top.calc_teste.unidade_teste.saida_ula[13] top.calc_teste.unidade_teste.saida_ula[12] top.calc_teste.unidade_teste.saida_ula[11] top.calc_teste.unidade_teste.saida_ula[10] top.calc_teste.unidade_teste.saida_ula[9] top.calc_teste.unidade_teste.saida_ula[8] top.calc_teste.unidade_teste.saida_ula[7] top.calc_teste.unidade_teste.saida_ula[6] top.calc_teste.unidade_teste.saida_ula[5] top.calc_teste.unidade_teste.saida_ula[4] top.calc_teste.unidade_teste.saida_ula[3] top.calc_teste.unidade_teste.saida_ula[2] top.calc_teste.unidade_teste.saida_ula[1] top.calc_teste.unidade_teste.saida_ula[0]
+@200
+-regW
+@24
++{top.calc_teste.unidade_teste.o_banco_reg.registradores[0].regx.saida[15:0]} #{top.calc_teste.unidade_teste.o_banco_reg.registradores[0].regx.saida[15:0]} top.calc_teste.unidade_teste.o_banco_reg.registradores[0].regx.saida[15] top.calc_teste.unidade_teste.o_banco_reg.registradores[0].regx.saida[14] top.calc_teste.unidade_teste.o_banco_reg.registradores[0].regx.saida[13] top.calc_teste.unidade_teste.o_banco_reg.registradores[0].regx.saida[12] top.calc_teste.unidade_teste.o_banco_reg.registradores[0].regx.saida[11] top.calc_teste.unidade_teste.o_banco_reg.registradores[0].regx.saida[10] top.calc_teste.unidade_teste.o_banco_reg.registradores[0].regx.saida[9] top.calc_teste.unidade_teste.o_banco_reg.registradores[0].regx.saida[8] top.calc_teste.unidade_teste.o_banco_reg.registradores[0].regx.saida[7] top.calc_teste.unidade_teste.o_banco_reg.registradores[0].regx.saida[6] top.calc_teste.unidade_teste.o_banco_reg.registradores[0].regx.saida[5] top.calc_teste.unidade_teste.o_banco_reg.registradores[0].regx.saida[4] top.calc_teste.unidade_teste.o_banco_reg.registradores[0].regx.saida[3] top.calc_teste.unidade_teste.o_banco_reg.registradores[0].regx.saida[2] top.calc_teste.unidade_teste.o_banco_reg.registradores[0].regx.saida[1] top.calc_teste.unidade_teste.o_banco_reg.registradores[0].regx.saida[0]
+@200
+-
+-reg3-5
+@24
+#{top.calc_teste.unidade_teste.o_banco_reg.registradores[3].regx.saida[15:0]} top.calc_teste.unidade_teste.o_banco_reg.registradores[3].regx.saida[15] top.calc_teste.unidade_teste.o_banco_reg.registradores[3].regx.saida[14] top.calc_teste.unidade_teste.o_banco_reg.registradores[3].regx.saida[13] top.calc_teste.unidade_teste.o_banco_reg.registradores[3].regx.saida[12] top.calc_teste.unidade_teste.o_banco_reg.registradores[3].regx.saida[11] top.calc_teste.unidade_teste.o_banco_reg.registradores[3].regx.saida[10] top.calc_teste.unidade_teste.o_banco_reg.registradores[3].regx.saida[9] top.calc_teste.unidade_teste.o_banco_reg.registradores[3].regx.saida[8] top.calc_teste.unidade_teste.o_banco_reg.registradores[3].regx.saida[7] top.calc_teste.unidade_teste.o_banco_reg.registradores[3].regx.saida[6] top.calc_teste.unidade_teste.o_banco_reg.registradores[3].regx.saida[5] top.calc_teste.unidade_teste.o_banco_reg.registradores[3].regx.saida[4] top.calc_teste.unidade_teste.o_banco_reg.registradores[3].regx.saida[3] top.calc_teste.unidade_teste.o_banco_reg.registradores[3].regx.saida[2] top.calc_teste.unidade_teste.o_banco_reg.registradores[3].regx.saida[1] top.calc_teste.unidade_teste.o_banco_reg.registradores[3].regx.saida[0]
+#{top.calc_teste.unidade_teste.o_banco_reg.registradores[4].regx.saida[15:0]} top.calc_teste.unidade_teste.o_banco_reg.registradores[4].regx.saida[15] top.calc_teste.unidade_teste.o_banco_reg.registradores[4].regx.saida[14] top.calc_teste.unidade_teste.o_banco_reg.registradores[4].regx.saida[13] top.calc_teste.unidade_teste.o_banco_reg.registradores[4].regx.saida[12] top.calc_teste.unidade_teste.o_banco_reg.registradores[4].regx.saida[11] top.calc_teste.unidade_teste.o_banco_reg.registradores[4].regx.saida[10] top.calc_teste.unidade_teste.o_banco_reg.registradores[4].regx.saida[9] top.calc_teste.unidade_teste.o_banco_reg.registradores[4].regx.saida[8] top.calc_teste.unidade_teste.o_banco_reg.registradores[4].regx.saida[7] top.calc_teste.unidade_teste.o_banco_reg.registradores[4].regx.saida[6] top.calc_teste.unidade_teste.o_banco_reg.registradores[4].regx.saida[5] top.calc_teste.unidade_teste.o_banco_reg.registradores[4].regx.saida[4] top.calc_teste.unidade_teste.o_banco_reg.registradores[4].regx.saida[3] top.calc_teste.unidade_teste.o_banco_reg.registradores[4].regx.saida[2] top.calc_teste.unidade_teste.o_banco_reg.registradores[4].regx.saida[1] top.calc_teste.unidade_teste.o_banco_reg.registradores[4].regx.saida[0]
+#{top.calc_teste.unidade_teste.o_banco_reg.registradores[5].regx.saida[15:0]} top.calc_teste.unidade_teste.o_banco_reg.registradores[5].regx.saida[15] top.calc_teste.unidade_teste.o_banco_reg.registradores[5].regx.saida[14] top.calc_teste.unidade_teste.o_banco_reg.registradores[5].regx.saida[13] top.calc_teste.unidade_teste.o_banco_reg.registradores[5].regx.saida[12] top.calc_teste.unidade_teste.o_banco_reg.registradores[5].regx.saida[11] top.calc_teste.unidade_teste.o_banco_reg.registradores[5].regx.saida[10] top.calc_teste.unidade_teste.o_banco_reg.registradores[5].regx.saida[9] top.calc_teste.unidade_teste.o_banco_reg.registradores[5].regx.saida[8] top.calc_teste.unidade_teste.o_banco_reg.registradores[5].regx.saida[7] top.calc_teste.unidade_teste.o_banco_reg.registradores[5].regx.saida[6] top.calc_teste.unidade_teste.o_banco_reg.registradores[5].regx.saida[5] top.calc_teste.unidade_teste.o_banco_reg.registradores[5].regx.saida[4] top.calc_teste.unidade_teste.o_banco_reg.registradores[5].regx.saida[3] top.calc_teste.unidade_teste.o_banco_reg.registradores[5].regx.saida[2] top.calc_teste.unidade_teste.o_banco_reg.registradores[5].regx.saida[1] top.calc_teste.unidade_teste.o_banco_reg.registradores[5].regx.saida[0]
+@200
+-
+@22
+#{top.calc_teste.unidade_teste.reg_le_1[6:0]} top.calc_teste.unidade_teste.reg_le_1[6] top.calc_teste.unidade_teste.reg_le_1[5] top.calc_teste.unidade_teste.reg_le_1[4] top.calc_teste.unidade_teste.reg_le_1[3] top.calc_teste.unidade_teste.reg_le_1[2] top.calc_teste.unidade_teste.reg_le_1[1] top.calc_teste.unidade_teste.reg_le_1[0]
+#{top.calc_teste.unidade_teste.reg_le_2[6:0]} top.calc_teste.unidade_teste.reg_le_2[6] top.calc_teste.unidade_teste.reg_le_2[5] top.calc_teste.unidade_teste.reg_le_2[4] top.calc_teste.unidade_teste.reg_le_2[3] top.calc_teste.unidade_teste.reg_le_2[2] top.calc_teste.unidade_teste.reg_le_2[1] top.calc_teste.unidade_teste.reg_le_2[0]
+@23
+#{top.calc_teste.unidade_teste.saida_br_2[15:0]} top.calc_teste.unidade_teste.saida_br_2[15] top.calc_teste.unidade_teste.saida_br_2[14] top.calc_teste.unidade_teste.saida_br_2[13] top.calc_teste.unidade_teste.saida_br_2[12] top.calc_teste.unidade_teste.saida_br_2[11] top.calc_teste.unidade_teste.saida_br_2[10] top.calc_teste.unidade_teste.saida_br_2[9] top.calc_teste.unidade_teste.saida_br_2[8] top.calc_teste.unidade_teste.saida_br_2[7] top.calc_teste.unidade_teste.saida_br_2[6] top.calc_teste.unidade_teste.saida_br_2[5] top.calc_teste.unidade_teste.saida_br_2[4] top.calc_teste.unidade_teste.saida_br_2[3] top.calc_teste.unidade_teste.saida_br_2[2] top.calc_teste.unidade_teste.saida_br_2[1] top.calc_teste.unidade_teste.saida_br_2[0]
+[pattern_trace] 1
+[pattern_trace] 0

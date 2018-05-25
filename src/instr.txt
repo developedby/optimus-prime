@@ -1,0 +1,124 @@
+--ADDWF
+when instrucao(13 downto 8) = "000111"
+ula_op = "00";
+reg_le_1 = instrucao(6 downto 0);
+reg_le_2 = "0000000";
+orig_ula_1 = "00";--reg
+orig_ula_2 = "00";--reg
+br_hab_escr = '1';
+
+when instrucao(7) = "0"
+reg_escr = "0000000";
+
+when instrucao(7) = "1"
+reg_escr = instrucao(6 downto 0);
+
+--CLRF
+when instrucao(13 downto 7) = "0000011"
+ula_op = "01";
+reg_le_1 = instrucao(6 downto 0);
+reg_le_2 = instrucao(6 downto 0);
+orig_ula_1 = "00";--reg
+orig_ula_2 = "00";--reg
+br_hab_escr = '1';
+reg_escr = instrucao(6 downto 0);
+
+--CLRW
+when instrucao(13 downto 7) = "0000010"
+ula_op = "01";
+reg_le_1 = "0000000";
+reg_le_2 = "0000000";
+orig_ula_1 = "00";--reg
+orig_ula_2 = "00";--reg
+br_hab_escr = '1';
+reg_escr = "0000000";
+
+--MOVF
+when instrucao(13 downto 8) = "001000"
+ula_op = "00"
+reg_le_1 = instrucao(6 downto 0);
+orig_ula_1 = "00";--reg
+orig_ula_2 = "01";--constante 0
+br_hab_escr = '1';
+
+when instrucao(7) = "0"
+reg_escr = "0000000";
+
+when instrucao(7) = "1"
+reg_escr = instrucao(6 downto 0);
+
+--MOVWF
+when instrucao(13 downto 7) = "0000001"
+ula_op = "00"
+reg_le_1 = "0000000";
+orig_ula_2 = "01";--constante 0
+br_hab_escr = '1';
+reg_escr = instrucao(6 downto 0);
+
+--SUBWFB
+when instrucao(13 downto 8) = "000010"
+ula_op = "01";
+reg_le_1 = instrucao(6 downto 0);
+reg_le_2 = "0000000";
+orig_ula_1 = "00";--reg
+orig_ula_2 = "00";--reg
+br_hab_escr = '1';
+
+when instrucao(7) = "0"
+reg_escr = "0000000";
+
+when instrucao(7) = "1"
+reg_escr = instrucao(6 downto 0);
+
+--SWAPF
+when instrucao(13 downto 8) = "001110"
+ula_op = "11"
+reg_le_1 = instrucao(6 downto 0);
+reg_le_2 = instrucao(6 downto 0);
+orig_ula_1 = "00";--reg
+orig_ula_2 = "00";--reg
+br_hab_escr = '1';
+
+when instrucao(7) = "0"
+reg_escr = "0000000";
+
+when instrucao(7) = "1"
+reg_escr = instrucao(6 downto 0);
+
+--BTFSC
+--when instrucao(13 downto 11) = "010"
+
+--BTFSS
+--when instrucao(13 downto 10) = "011"
+
+--ADDLW
+when instrucao(13 downto 8) = "111110"
+ula_op = "00"
+reg_le_2 = "0000000";
+orig_ula_1 = "01";--constante da instr
+orig_ula_2 = "00";--reg
+br_hab_escr = '1';
+reg_escr = "0000000";
+
+--MOVLW
+when instrucao(13 downto 8) = "110000"
+ula_op = "00"
+orig_ula_1 = "01";--constante da instr
+orig_ula_2 = "01";--constante 0
+br_hab_escr = '1';
+reg_escr = "0000000";
+
+--SUBLW
+when instrucao(13 downto 8) = "111100"
+ula_op = "01"
+reg_le_2 = "0000000";
+orig_ula_1 = "01";--constante da instr
+orig_ula_2 = "00";--reg
+br_hab_escr = '1';
+reg_escr = "0000000";
+
+--MOVIW
+--when instrucao(13 downto 3) = "00000000010"
+
+--MOVWI
+--when instrucao(13 downto 3) = "00000000011"
