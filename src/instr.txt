@@ -89,7 +89,7 @@ reg_escr = instrucao(6 downto 0);
 --when instrucao(13 downto 11) = "010"
 
 --BTFSS
---when instrucao(13 downto 10) = "011"
+--when instrucao(13 downto 11) = "011"
 
 --ADDLW
 when instrucao(13 downto 8) = "111110"

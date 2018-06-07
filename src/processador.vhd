@@ -2,33 +2,34 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity calc is
+entity processador is
   port (
     clk, rst: in std_logic
   );
 end entity;
 
-architecture arq_calc of calc is
+architecture arq_processador of processador is
 component uc is
   port(
     clk, rst: in std_logic;
     rom_saida: in unsigned(13 downto 0);
-    pc_entrada: out unsigned(14 downto 0);
-    pc_saida: in unsigned(14 downto 0);
+    orig_pc: out std_logic;
     pc_hab_escr: out std_logic;
     ula_op: out unsigned(1 downto 0);
     reg_le_1, reg_le_2, reg_escr: out unsigned(6 downto 0);
     orig_ula_1: out unsigned(1 downto 0);
     orig_ula_2: out unsigned(1 downto 0);
-    br_hab_escr: out std_logic
+    br_hab_escr: out std_logic;
+    pula_em: out std_logic;
+    pula_instr_ula: in std_logic
 );
 end component;
 
 component pc is
   port(
       clk, rst, hab_escr: in std_logic;
-	entrada: in unsigned(14 downto 0);
-	saida: out unsigned(14 downto 0)
+      entrada: in unsigned(14 downto 0);
+      saida: out unsigned(14 downto 0)
 );
 end component;
 
@@ -44,7 +45,10 @@ component ula is
   port (
     entr_a, entr_b: in unsigned(15 downto 0);
     sel_op: in unsigned(1 downto 0);
-    saida: out unsigned(15 downto 0)
+    saida: out unsigned(15 downto 0);
+    zero, carry: out unsigned(15 downto 0);
+    pula_em: in std_logic;
+    pula_instr: out std_logic
   );
 end component;
 
@@ -58,13 +62,16 @@ component banco_reg is
     clk: in std_logic;
     rst: in std_logic;
     saida_dados1: out unsigned(15 downto 0);
-    saida_dados2: out unsigned(15 downto 0)
+    saida_dados2: out unsigned(15 downto 0);
+    entr_z, entr_c: in unsigned(15 downto 0);
+    hab_escr_z, hab_escr_c: in std_logic
   );
 end component;
 
 signal pc_hab_escr: std_logic;
 signal rom_saida: unsigned(13 downto 0);
 signal pc_saida, pc_entrada: unsigned(14 downto 0);
+signal orig_pc: std_logic;
 
 signal entr_ula_1, entr_ula_2: unsigned(15 downto 0);
 signal ula_op: unsigned(1 downto 0);
@@ -76,14 +83,19 @@ signal br_hab_escr: std_logic;
 
 signal saida_br_1, saida_br_2: unsigned(15 downto 0);
 
+signal zero, carry: unsigned(15 downto 0);
+signal hab_escr_z, hab_escr_c: std_logic;
+
+signal pula_em: std_logic;
+signal pula_instr: std_logic;
+
 begin
 a_uc:
 uc port map(
    clk => clk,
    rst => rst,
    rom_saida => rom_saida,
-   pc_entrada => pc_entrada,
-   pc_saida => pc_saida,
+   orig_pc => orig_pc,
    pc_hab_escr => pc_hab_escr,
    ula_op => ula_op,
    reg_le_1 => reg_le_1,
@@ -91,7 +103,9 @@ uc port map(
    reg_escr => reg_escr,
    orig_ula_1 => orig_ula_1,
    orig_ula_2 => orig_ula_2,
-   br_hab_escr => br_hab_escr
+   br_hab_escr => br_hab_escr,
+   pula_em => pula_em,
+   pula_instr_ula => pula_instr
 );
 
 o_pc:
@@ -115,7 +129,11 @@ ula port map(
     entr_a => entr_ula_1,
     entr_b => entr_ula_2,
     sel_op => ula_op,
-    saida => saida_ula
+    saida => saida_ula,
+    zero => zero,
+    carry => carry,
+    pula_em => pula_em,
+    pula_instr => pula_instr
 );
 
 o_banco_reg:
@@ -128,19 +146,47 @@ banco_reg port map(
     clk => clk,
     rst => rst,
     saida_dados1 => saida_br_1,
-    saida_dados2 => saida_br_2
+    saida_dados2 => saida_br_2,
+    entr_z => zero,
+    entr_c => carry,
+    hab_escr_z => hab_escr_z,
+    hab_escr_c => hab_escr_c
 );
 
-entr_ula_1(7 downto 0) <= saida_br_1(7 downto 0) when orig_ula_1 = "00" else
-              rom_saida(7 downto 0) when orig_ula_1 = "01" else
+pc_entrada <= saida_ula(14 downto 0) when orig_pc = '0' else
+              pc_saida + 1;
+
+entr_ula_1 <= saida_br_1 when orig_ula_1 = "00" else --reg
+              (
+                7 downto 0 => rom_saida(7 downto 0),
+                others => rom_saida(7)
+              )
+              when orig_ula_1 = "01" else --constate
+              (
+                14 downto 0 => pc_saida,
+                15 => '0'
+              )
+              when orig_ula_1 = "10" else --pc
+              (
+                10 downto 0 => rom_saida(10 downto 0),
+                14 downto 11 => pc_saida,
+                15 => '0'
+              )
+              when orig_ula_1 = "11" else --constante GOTO
               (others=>'0');
 
-entr_ula_1(15 downto 8) <= saida_br_1(15 downto 8) when orig_ula_1 = "00" else
-              (others=>rom_saida(7)) when orig_ula_1 = "01" else
-              (others=>'0');
-
-entr_ula_2 <= saida_br_2 when orig_ula_2 = "00" else
-            "0000000000000000" when orig_ula_2 = "01" else
+entr_ula_2 <= saida_br_2 when orig_ula_2 = "00" else --reg
+            "0000000000000000" when orig_ula_2 = "01" else --constante 0
+            (
+                8 downto 0 => rom_saida(8 downto 0),
+                others => rom_saida(8)
+            )
+            when orig_ula_2 = "10" else --constante BRA
+            (
+                3 downto 0 => rom_saida(10 downto 7),
+                others => '0'
+            )
+            when orig_ula_2 = "11" else --bit para testar
             (others=>'0');
 
 end architecture;

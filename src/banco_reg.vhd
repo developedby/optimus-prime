@@ -12,7 +12,9 @@ entity banco_reg is
     clk: in std_logic;
     rst: in std_logic;
     saida_dados1: out unsigned(15 downto 0);
-    saida_dados2: out unsigned(15 downto 0)
+    saida_dados2: out unsigned(15 downto 0);
+    entr_z, entr_c: in unsigned(15 downto 0);
+    hab_escr_z, hab_escr_c: in std_logic
   );
 end entity;
 
@@ -30,7 +32,27 @@ architecture arq_banco_reg of banco_reg is
   signal saida_reg: unsigned_array_128x16;
 begin
   registradores:
-  for i in 0 to 127 generate
+  for i in 1 to 127 generate
+      if i = 0 generate
+          regZ: reg16bit port map (
+    	    clk => clk,
+    		rst => rst,
+    		hab_escr => hab_reg_escr(i),
+    		entrada => entr_dados when sel_reg_escr = "0000000" else
+                       entr_z,
+    		saida => saida_reg(i)
+    	  );
+      end generate;
+      if i = 1 generate
+          regC: reg16bit port map (
+    	    clk => clk,
+    		rst => rst,
+    		hab_escr => hab_reg_escr(i),
+    		entrada => entr_dados when sel_reg_escr = "0000001" else
+                       entr_c,
+    		saida => saida_reg(i)
+    	  );
+      end generate;
 	  regX: reg16bit port map (
 	    clk => clk,
 		rst => rst,
@@ -299,8 +321,8 @@ begin
                   saida_reg(127) when sel_reg_le2 = "1111111" else
 			      (others=>'0');
 
-hab_reg_escr(0) <= hab_escr when sel_reg_escr = "0000000" else '0';
-hab_reg_escr(1) <= hab_escr when sel_reg_escr = "0000001" else '0';
+hab_reg_escr(0) <= hab_escr when sel_reg_escr = "0000000" else hab_escr_z;
+hab_reg_escr(1) <= hab_escr when sel_reg_escr = "0000001" else hab_escr_c;
 hab_reg_escr(2) <= hab_escr when sel_reg_escr = "0000010" else '0';
 hab_reg_escr(3) <= hab_escr when sel_reg_escr = "0000011" else '0';
 hab_reg_escr(4) <= hab_escr when sel_reg_escr = "0000100" else '0';
