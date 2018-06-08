@@ -2,11 +2,11 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity calc_teste is
+entity processador_teste is
 end entity;
 
-architecture calc_teste of calc_teste is
-  component calc is
+architecture processador_teste of processador_teste is
+  component processador is
     port (
       clk, rst: in std_logic
     );
@@ -16,7 +16,7 @@ architecture calc_teste of calc_teste is
 
 begin
   unidade_teste:
-  calc port map(
+  processador port map(
       clk => clk,
       rst => rst
   );

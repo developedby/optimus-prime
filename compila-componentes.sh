@@ -11,6 +11,9 @@ ghdl -e reg16bit
 ghdl -a ../src/reg14bit.vhd
 ghdl -e reg14bit
 
+ghdl -a ../src/monoestavel.vhd
+ghdl -e monoestavel
+
 ghdl -a ../src/banco_reg.vhd
 ghdl -e banco_reg
 
@@ -26,5 +29,5 @@ ghdl -e ff_t
 ghdl -a ../src/uc.vhd
 ghdl -e uc
 
-ghdl -a ../src/calc.vhd
-ghdl -e calc
+ghdl -a ../src/processador.vhd
+ghdl -e processador

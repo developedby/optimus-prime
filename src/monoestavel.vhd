@@ -16,12 +16,12 @@ begin
   process(clk, rst)
   begin
     if rst = '1' then
-	  saida_t <= (others => '0');
+	  saida_t <= '0';
     elsif rising_edge(clk) then
 	  if saida_t = '1' then
-          saida_t = '0';
+          saida_t <= '0';
       elsif entrada = '1' then
-          saida_t = '1';
+          saida_t <= '1';
       end if;
 	end if;
   end process;

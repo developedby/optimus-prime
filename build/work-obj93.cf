@@ -1,46 +1,34 @@
 v 4
-file . "../testes/calc_teste.vhd" "afb918ccedec525309f42aa229ec8ef53b328029" "20180525035233.780":
-  entity calc_teste at 1( 0) + 0 on 699;
-  architecture calc_teste of calc_teste at 8( 104) + 0 on 700;
-file . "../src/calc.vhd" "9ad1bc5a41e975d57c581b970a182323f996bb92" "20180525035206.887":
-  entity calc at 1( 0) + 0 on 697;
-  architecture arq_calc of calc at 11( 139) + 0 on 698;
-file . "../src/uc_pc_rom.vhd" "b87f49f2077bd8a945871d7e735d979352f5a69d" "20180525014902.093":
-  entity uc_pc_rom at 1( 0) + 0 on 407;
-  architecture arq_uc_pc_rom of uc_pc_rom at 11( 144) + 0 on 408;
-file . "../src/uc.vhd" "68421fe5a2d8aa58f33264de3a1815b0ce1994b0" "20180525035206.846":
-  entity uc at 1( 0) + 0 on 695;
-  architecture arq_uc of uc at 20( 516) + 0 on 696;
-file . "../src/pc.vhd" "81d501600a940c7ab5e4c81c8ff45a6079bad8bb" "20180525035206.774":
-  entity pc at 1( 0) + 0 on 691;
-  architecture arq_pc of pc at 13( 217) + 0 on 692;
-file . "../src/rom.vhd" "1c1c0972610c177078b30360fb0d9174cfc91db3" "20180525035206.739":
-  entity rom at 1( 0) + 0 on 689;
-  architecture arq_rom of rom at 13( 211) + 0 on 690;
-file . "../testes/ula_com_banco_reg_teste.vhd" "60509d318924e53b07a3c073bdcc568bac95fba6" "20180511011451.784":
-  entity ula_com_banco_reg_teste at 1( 0) + 0 on 29;
-  architecture arq_ula_com_banco_reg_teste of ula_com_banco_reg_teste at 8( 117) + 0 on 30;
-file . "../src/banco_reg.vhd" "c8b5e371431cf09e8666fd5955b773fe6aea1a33" "20180525035206.674":
-  entity banco_reg at 1( 0) + 0 on 687;
-  architecture arq_banco_reg of banco_reg at 19( 466) + 0 on 688;
-file . "../src/ula.vhd" "85245c866dfb0683fbcd5c7eba0d6fbb38e1e926" "20180525035206.560":
-  entity ula at 1( 0) + 0 on 681;
-  architecture arq_ula of ula at 13( 231) + 0 on 682;
-file . "../testes/ula_teste.vhd" "1f9bae99dc89dd4614d2f52b4918324e3c27f3f0" "20180420000534.242":
-  entity ula_teste at 1( 0) + 0 on 13;
-  architecture arq_ula_teste of ula_teste at 8( 103) + 0 on 14;
-file . "../src/reg16bit.vhd" "d5bcb17762abe7301df217c4cd77d7eeb7a1c896" "20180525035206.598":
-  entity reg16bit at 1( 0) + 0 on 683;
-  architecture arq_reg16bit of reg16bit at 13( 235) + 0 on 684;
-file . "../src/ula_com_banco_reg.vhd" "3a8c1786629cef98f4712c9807a2aef2365f00ef" "20180525014901.970":
-  entity ula_com_banco_reg at 1( 0) + 0 on 399;
-  architecture arq_ula_com_banco_reg of ula_com_banco_reg at 16( 430) + 0 on 400;
-file . "../src/reg14bit.vhd" "5a7afdcb697c1047349c4b3742cf6570e658a7ec" "20180525035206.634":
-  entity reg14bit at 1( 0) + 0 on 685;
-  architecture arq_reg14bit of reg14bit at 13( 235) + 0 on 686;
-file . "../src/ff_t.vhd" "189f781c958f1152ee300c08eca07b9bcb3c9552" "20180525035206.809":
-  entity ff_t at 1( 0) + 0 on 693;
-  architecture arq_ff_t of ff_t at 12( 166) + 0 on 694;
-file . "../testes/uc_pc_rom_teste.vhd" "c4f675b72b8012940a9539cc3af543446ef93a0b" "20180518002038.200":
-  entity uc_pc_rom_teste at 1( 0) + 0 on 317;
-  architecture arq_uc_pc_rom_teste of uc_pc_rom_teste at 8( 109) + 0 on 318;
+file . "../testes/processador_teste.vhd" "f2f7adeaeea1b6b654c6f02af9042ffef3f733b5" "20180608003724.695":
+  entity processador_teste at 1( 0) + 0 on 383;
+  architecture processador_teste of processador_teste at 8( 111) + 0 on 384;
+file . "../src/processador.vhd" "84533ce97c33c839a73ab33831bd86ec8a36b9cf" "20180608003716.786":
+  entity processador at 1( 0) + 0 on 381;
+  architecture arq_processador of processador at 11( 146) + 0 on 382;
+file . "../src/uc.vhd" "0b8c3aa29e4345692d29a715acd08a854e87514f" "20180608003716.743":
+  entity uc at 1( 0) + 0 on 379;
+  architecture arq_uc of uc at 22( 568) + 0 on 380;
+file . "../src/pc.vhd" "81d501600a940c7ab5e4c81c8ff45a6079bad8bb" "20180608003716.671":
+  entity pc at 1( 0) + 0 on 375;
+  architecture arq_pc of pc at 13( 217) + 0 on 376;
+file . "../src/banco_reg.vhd" "86024cb8d0375d553edf1ec85acc7ba4ab52ed1a" "20180608003716.569":
+  entity banco_reg at 1( 0) + 0 on 371;
+  architecture arq_banco_reg of banco_reg at 21( 556) + 0 on 372;
+file . "../src/reg14bit.vhd" "5a7afdcb697c1047349c4b3742cf6570e658a7ec" "20180608003716.493":
+  entity reg14bit at 1( 0) + 0 on 367;
+  architecture arq_reg14bit of reg14bit at 13( 235) + 0 on 368;
+file . "../src/ula.vhd" "7cf9c8f126fd2a14527ea949f620c8482e9b5172" "20180608003716.394":
+  entity ula at 1( 0) + 0 on 363;
+  architecture arq_ula of ula at 16( 333) + 0 on 364;
+file . "../src/reg16bit.vhd" "d5bcb17762abe7301df217c4cd77d7eeb7a1c896" "20180608003716.458":
+  entity reg16bit at 1( 0) + 0 on 365;
+  architecture arq_reg16bit of reg16bit at 13( 235) + 0 on 366;
+file . "../src/monoestavel.vhd" "c6371cd8166cd02ad171fe605af3a93ae356803b" "20180608003716.528":
+  entity monoestavel at 1( 0) + 0 on 369;
+  architecture arq_monoestavel of monoestavel at 13( 204) + 0 on 370;
+file . "../src/rom.vhd" "2015ed2cd3f4c7856a2b00e2d2e5a6483c83f118" "20180608003716.635":
+  entity rom at 1( 0) + 0 on 373;
+  architecture arq_rom of rom at 13( 211) + 0 on 374;
+file . "../src/ff_t.vhd" "189f781c958f1152ee300c08eca07b9bcb3c9552" "20180608003716.706":
+  entity ff_t at 1( 0) + 0 on 377;
+  architecture arq_ff_t of ff_t at 12( 166) + 0 on 378;

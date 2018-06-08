@@ -31,9 +31,9 @@ component ff_t is
   );
 end component;
 
-component reg1bit is
+component monoestavel is
   port(
-    clk, rst, hab_escr: in std_logic;
+    clk, rst: in std_logic;
 	entrada: in std_logic;
 	saida: out std_logic
   );
@@ -53,7 +53,7 @@ begin
         saida => pula_instr
   );
 
-  instrucao <= "0000000000000000" when pula_instr = '1' else
+  instrucao <= "00000000000000" when pula_instr = '1' else
                rom_saida when estado = '0' else
                instrucao;
 
@@ -66,7 +66,7 @@ begin
 
   orig_pc <= '0' when --vem da ula
              instrucao(13 downto 11) = "101" or --GOTO
-             instrucao(13 downto 10) = "1100" or --BRA
+             instrucao(13 downto 9) = "11001" or --BRA
              instrucao = "00000000001011" --BRW
              else '1'; --incrementa 1 no pc
 
@@ -98,7 +98,9 @@ begin
                instrucao(13 downto 7) = "0000011" or
                instrucao(13 downto 8) = "001000" or
                instrucao(13 downto 8) = "000010" or
-               instrucao(13 downto 8) = "001110"
+               instrucao(13 downto 8) = "001110" or
+               instrucao(13 downto 11) = "010" or
+               instrucao(13 downto 11) = "011"
                else (others=>'0');
 
     reg_le_2 <= "0000010" when
@@ -126,7 +128,7 @@ begin
                 instrucao(13 downto 8) = "110000" or
                 instrucao(13 downto 8) = "111100"
                 else "10" when --vem do pc
-                instrucao(13 downto 10) = "1100" or
+                instrucao(13 downto 9) = "11001" or
                 instrucao = "00000000001011"
                 else "11" when --constante GOTO
                 instrucao(13 downto 11) = "101"
@@ -147,7 +149,7 @@ begin
                   instrucao(13 downto 8) = "110000" or
                   instrucao(13 downto 11) = "101"
                   else "10" when --constante BRA
-                  instrucao(13 downto 10) = "1100"
+                  instrucao(13 downto 9) = "11001"
                   else "11" when --testa bit
                   instrucao(13 downto 11) = "010" or
                   instrucao(13 downto 10) = "011"
@@ -166,7 +168,7 @@ begin
                     instrucao(13 downto 8) = "110000"
                     else '0';
 
-    reg_escr <= "0000000" when
+    reg_escr <= "0000010" when
                 (instrucao(13 downto 8) = "000111" and instrucao(7) = '0') or
                 instrucao(13 downto 7) = "0000010" or
                 (instrucao(13 downto 8) = "001000" and instrucao(7) = '0') or
@@ -194,14 +196,14 @@ begin
                 instrucao(13 downto 8) = "111100" or --sublw
                 instrucao(13 downto 3) = "00000000010" or --moviw
                 instrucao(13 downto 3) = "00000000011" --movwi
-            else (others=>'0');
+            else '0';
 
     hab_escr_c <= '1' when
                 instrucao(13 downto 8) = "000111" or --addwf
                 instrucao(13 downto 8) = "000010" or --subwfb
                 instrucao(13 downto 8) = "111110" or --addlw
-                instrucao(13 downto 8) = "111100" or --sublw
-            else (others=>'0');
+                instrucao(13 downto 8) = "111100" --sublw
+            else '0';
 
     pula_em <= instrucao(11);
 end architecture;

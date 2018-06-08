@@ -20,6 +20,7 @@ component uc is
     orig_ula_1: out unsigned(1 downto 0);
     orig_ula_2: out unsigned(1 downto 0);
     br_hab_escr: out std_logic;
+    hab_escr_z, hab_escr_c: out std_logic;
     pula_em: out std_logic;
     pula_instr_ula: in std_logic
 );
@@ -105,7 +106,9 @@ uc port map(
    orig_ula_2 => orig_ula_2,
    br_hab_escr => br_hab_escr,
    pula_em => pula_em,
-   pula_instr_ula => pula_instr
+   pula_instr_ula => pula_instr,
+   hab_escr_z => hab_escr_z,
+   hab_escr_c => hab_escr_c
 );
 
 o_pc:
@@ -157,35 +160,19 @@ pc_entrada <= saida_ula(14 downto 0) when orig_pc = '0' else
               pc_saida + 1;
 
 entr_ula_1 <= saida_br_1 when orig_ula_1 = "00" else --reg
-              (
-                7 downto 0 => rom_saida(7 downto 0),
-                others => rom_saida(7)
-              )
-              when orig_ula_1 = "01" else --constate
-              (
-                14 downto 0 => pc_saida,
-                15 => '0'
-              )
+              rom_saida(7) & rom_saida(7) & rom_saida(7) & rom_saida(7) & rom_saida(7) & rom_saida(7) & rom_saida(7) & rom_saida(7) & rom_saida(7 downto 0)
+              when orig_ula_1 = "01" else --constante
+              '0' & pc_saida
               when orig_ula_1 = "10" else --pc
-              (
-                10 downto 0 => rom_saida(10 downto 0),
-                14 downto 11 => pc_saida,
-                15 => '0'
-              )
+              '0' & pc_saida(14 downto 11) & rom_saida(10 downto 0)
               when orig_ula_1 = "11" else --constante GOTO
               (others=>'0');
 
 entr_ula_2 <= saida_br_2 when orig_ula_2 = "00" else --reg
             "0000000000000000" when orig_ula_2 = "01" else --constante 0
-            (
-                8 downto 0 => rom_saida(8 downto 0),
-                others => rom_saida(8)
-            )
+            rom_saida(8) & rom_saida(8) & rom_saida(8) & rom_saida(8) & rom_saida(8) & rom_saida(8) & rom_saida(8) & rom_saida(8 downto 0)
             when orig_ula_2 = "10" else --constante BRA
-            (
-                3 downto 0 => rom_saida(10 downto 7),
-                others => '0'
-            )
+            "000000000000" & rom_saida(10 downto 7)
             when orig_ula_2 = "11" else --bit para testar
             (others=>'0');
 

@@ -30,37 +30,46 @@ architecture arq_banco_reg of banco_reg is
   signal hab_reg_escr: std_logic_array_128bit;
   type unsigned_array_128x16 is array(127 downto 0) of unsigned(15 downto 0);
   signal saida_reg: unsigned_array_128x16;
+
+  signal entr_dados_z, entr_dados_c: unsigned(15 downto 0);
+
 begin
   registradores:
-  for i in 1 to 127 generate
-      if i = 0 generate
+  for i in 0 to 127 generate
+      regZero:
+        if i = 0 generate
           regZ: reg16bit port map (
     	    clk => clk,
     		rst => rst,
     		hab_escr => hab_reg_escr(i),
-    		entrada => entr_dados when sel_reg_escr = "0000000" else
-                       entr_z,
+    		entrada => entr_dados_z,
     		saida => saida_reg(i)
     	  );
-      end generate;
-      if i = 1 generate
+      end generate regZero;
+      regCarry:
+        if i = 1 generate
           regC: reg16bit port map (
     	    clk => clk,
     		rst => rst,
     		hab_escr => hab_reg_escr(i),
-    		entrada => entr_dados when sel_reg_escr = "0000001" else
-                       entr_c,
+    		entrada => entr_dados_c,
     		saida => saida_reg(i)
     	  );
-      end generate;
-	  regX: reg16bit port map (
-	    clk => clk,
-		rst => rst,
-		hab_escr => hab_reg_escr(i),
-		entrada => entr_dados,
-		saida => saida_reg(i)
+      end generate regCarry;
+      outros_regs:
+        if i > 1 generate
+	      regX: reg16bit port map (
+	        clk => clk,
+		    rst => rst,
+		    hab_escr => hab_reg_escr(i),
+		    entrada => entr_dados,
+		    saida => saida_reg(i)
 	  );
+      end generate outros_regs;
   end generate;
+
+  entr_dados_z <= entr_dados when sel_reg_escr = "0000000" else entr_z;
+  entr_dados_c <= entr_dados when sel_reg_escr = "0000000" else entr_c;
 
   saida_dados1 <= saida_reg(0) when sel_reg_le1 = "0000000" else
                     saida_reg(1) when sel_reg_le1 = "0000001" else
