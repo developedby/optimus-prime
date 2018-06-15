@@ -2,6 +2,13 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
+-- Banco de registradores
+-- 128 registradores de 16 bits
+-- Registrador 0 é a flag Z(zero)
+-- Registrador 1 é a flag C(carry)
+-- Registrador 2 é o W(work)
+-- Registradores 120 a 127 são FSR(registradores de acesso indireto)
+
 entity banco_reg is
   port(
     sel_reg_le1: in unsigned(6 downto 0);

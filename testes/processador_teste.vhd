@@ -2,6 +2,9 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
+-- Teste do processador
+-- Executa as intruções da ROM até o stop-time
+
 entity processador_teste is
 end entity;
 

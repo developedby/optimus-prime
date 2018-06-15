@@ -2,6 +2,9 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
+-- ROM
+-- Memoria de programa com 2^15 words de 14 bits
+
 entity rom is
   port (
    clk: in std_logic;
