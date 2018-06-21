@@ -107,8 +107,8 @@ begin
                instrucao(13 downto 11) = "010" or
                instrucao(13 downto 11) = "011"
                else "1111" & instrucao(2 downto 0) when -- FSRn
-			   instrucao(15 downto 3) = "00000000010" or -- MOVIW
-			   instrucao(15 downto 3) = "00000000011"    -- MOVWI
+			   instrucao(13 downto 3) = "00000000010" or -- MOVIW
+			   instrucao(13 downto 3) = "00000000011"    -- MOVWI
 			   else (others=>'0');
 
     reg_le_2 <= "0000010" when -- W
@@ -117,8 +117,8 @@ begin
                 instrucao(13 downto 8) = "000010" or
                 instrucao(13 downto 8) = "111110" or
                 instrucao(13 downto 8) = "111100" or
-				instrucao(15 downto 3) = "00000000010" or -- MOVIW
-			    instrucao(15 downto 3) = "00000000011"    -- MOVWI
+				instrucao(13 downto 3) = "00000000010" or -- MOVIW
+			    instrucao(13 downto 3) = "00000000011" or -- MOVWI
                 instrucao = "00000000001011"
                 else instrucao(6 downto 0) when -- f
                 instrucao(13 downto 7) = "0000011" or
@@ -222,13 +222,13 @@ begin
 
 	-- Para as instruções que checam bit, escolhe se pula em clear(0) ou set(1)
     pula_em <= instrucao(11);
-	
+
 	-- Escreve na ram ou não
-	hab_escr_ram <= '1' when instrucao(15 downto 3) = "00000000011" --movwi
+	hab_escr_ram <= '1' when instrucao(13 downto 3) = "00000000011" --movwi
 					else '0'; --outras instrucoes
-	
+
 	-- Seleciona da onde vem a entrada de dados do banco de registradores
 	orig_br <= '1' when instrucao(13 downto 3) = "00000000010" --moviw
 				else '0'; --outras instrucoes
-	
+
 end architecture;

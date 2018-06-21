@@ -3,7 +3,7 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 -- RAM
--- Memória de dados de acesso indireto com 2^16 words de 16 bits
+-- Memï¿½ria de dados de acesso indireto com 2^16 words de 16 bits
 
 entity ram is
  port(
@@ -19,13 +19,13 @@ architecture arq_ram of ram is
  type mem is array (0 to 65535) of unsigned(15 downto 0);
  signal conteudo_ram : mem;
 begin
- process(clk,wr_en)
+ process(clk,hab_escr)
  begin
 	if rising_edge(clk) then
-		if wr_en='1' then
-			conteudo_ram(to_integer(endereco)) <= dado_in;
+		if hab_escr = '1' then
+			conteudo_ram(to_integer(endereco)) <= entr_dado;
 		end if;
 	end if;
  end process;
- dado_out <= conteudo_ram(to_integer(endereco));
+ saida_dado <= conteudo_ram(to_integer(endereco));
 end architecture;

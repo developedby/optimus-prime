@@ -98,7 +98,7 @@ signal orig_ula_1: unsigned(1 downto 0);
 signal orig_ula_2: unsigned(1 downto 0);
 signal br_hab_escr: std_logic;
 
-signal saida_br_1, saida_br_2: unsigned(15 downto 0);
+signal entr_br, saida_ram, saida_br_1, saida_br_2: unsigned(15 downto 0);
 
 signal zero, carry: unsigned(15 downto 0);
 signal hab_escr_z, hab_escr_c: std_logic;
@@ -207,9 +207,9 @@ entr_ula_2 <= saida_br_2 when orig_ula_2 = "00" else --reg
             "000000000000" & rom_saida(10 downto 7)
             when orig_ula_2 = "11" else --bit para testar
             (others=>'0');
-			
+
 -- Mux entrada banco de registradores
 entr_br <= saida_ula when orig_br = '0' else
-			saida_ram when orig_br = '1' else '0';
-			
+			saida_ram when orig_br = '1' else (others=>'0');
+
 end architecture;
