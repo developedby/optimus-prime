@@ -76,7 +76,7 @@ begin
   end generate;
 
   entr_dados_z <= entr_dados when sel_reg_escr = "0000000" else entr_z;
-  entr_dados_c <= entr_dados when sel_reg_escr = "0000000" else entr_c;
+  entr_dados_c <= entr_dados when sel_reg_escr = "0000001" else entr_c;
 
   saida_dados1 <= saida_reg(0) when sel_reg_le1 = "0000000" else
                     saida_reg(1) when sel_reg_le1 = "0000001" else

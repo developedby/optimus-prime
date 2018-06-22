@@ -1,37 +1,37 @@
 v 4
-file . "../src/ram.vhd" "8b96488e76d1214e2386a5bbc065c1c9723b0762" "20180621021140.257":
-  entity ram at 1( 0) + 0 on 675;
-  architecture arq_ram of ram at 18( 364) + 0 on 676;
-file . "../src/ff_t.vhd" "189f781c958f1152ee300c08eca07b9bcb3c9552" "20180621021140.223":
-  entity ff_t at 1( 0) + 0 on 673;
-  architecture arq_ff_t of ff_t at 12( 166) + 0 on 674;
-file . "../src/rom.vhd" "113ea537db83e2756372a3f4fdeef1a535df6c93" "20180621021140.153":
-  entity rom at 1( 0) + 0 on 669;
-  architecture arq_rom of rom at 16( 268) + 0 on 670;
-file . "../src/monoestavel.vhd" "c6371cd8166cd02ad171fe605af3a93ae356803b" "20180621021140.048":
-  entity monoestavel at 1( 0) + 0 on 665;
-  architecture arq_monoestavel of monoestavel at 13( 204) + 0 on 666;
-file . "../src/reg16bit.vhd" "d5bcb17762abe7301df217c4cd77d7eeb7a1c896" "20180621021139.978":
-  entity reg16bit at 1( 0) + 0 on 661;
-  architecture arq_reg16bit of reg16bit at 13( 235) + 0 on 662;
-file . "../src/ula.vhd" "7cf9c8f126fd2a14527ea949f620c8482e9b5172" "20180621021139.941":
-  entity ula at 1( 0) + 0 on 659;
-  architecture arq_ula of ula at 16( 333) + 0 on 660;
-file . "../src/reg14bit.vhd" "5a7afdcb697c1047349c4b3742cf6570e658a7ec" "20180621021140.013":
-  entity reg14bit at 1( 0) + 0 on 663;
-  architecture arq_reg14bit of reg14bit at 13( 235) + 0 on 664;
-file . "../src/banco_reg.vhd" "c934e65c55ed78972ccd75d4a917cb82747122aa" "20180621021140.088":
-  entity banco_reg at 1( 0) + 0 on 667;
-  architecture arq_banco_reg of banco_reg at 28( 793) + 0 on 668;
-file . "../src/pc.vhd" "81d501600a940c7ab5e4c81c8ff45a6079bad8bb" "20180621021140.188":
-  entity pc at 1( 0) + 0 on 671;
-  architecture arq_pc of pc at 13( 217) + 0 on 672;
-file . "../src/uc.vhd" "6b2fd82a63f3db790e36b8e4a3be219e237830bc" "20180621021140.294":
-  entity uc at 1( 0) + 0 on 677;
-  architecture arq_uc of uc at 27( 702) + 0 on 678;
-file . "../src/processador.vhd" "45d356fc60a41db11095e7c21e53808f3b2be83e" "20180621021140.337":
-  entity processador at 1( 0) + 0 on 679;
-  architecture arq_processador of processador at 15( 259) + 0 on 680;
-file . "../testes/processador_teste.vhd" "6983230519465d9840598f88c43a48ee11cb86ec" "20180621021140.421":
-  entity processador_teste at 1( 0) + 0 on 681;
-  architecture processador_teste of processador_teste at 11( 186) + 0 on 682;
+file . "../src/ram.vhd" "e1d7588b00dfe7765a6134ad11354095b05840c7" "20180622010501.322":
+  entity ram at 1( 0) + 0 on 1291;
+  architecture arq_ram of ram at 18( 364) + 0 on 1292;
+file . "../src/ff_t.vhd" "189f781c958f1152ee300c08eca07b9bcb3c9552" "20180622010501.285":
+  entity ff_t at 1( 0) + 0 on 1289;
+  architecture arq_ff_t of ff_t at 12( 166) + 0 on 1290;
+file . "../src/rom.vhd" "3f83c89ddfc4dbe0ca041467e199d9c0b507f0f4" "20180622010501.211":
+  entity rom at 1( 0) + 0 on 1285;
+  architecture arq_rom of rom at 16( 268) + 0 on 1286;
+file . "../src/monoestavel.vhd" "c6371cd8166cd02ad171fe605af3a93ae356803b" "20180622010501.102":
+  entity monoestavel at 1( 0) + 0 on 1281;
+  architecture arq_monoestavel of monoestavel at 13( 204) + 0 on 1282;
+file . "../src/reg16bit.vhd" "d5bcb17762abe7301df217c4cd77d7eeb7a1c896" "20180622010501.026":
+  entity reg16bit at 1( 0) + 0 on 1277;
+  architecture arq_reg16bit of reg16bit at 13( 235) + 0 on 1278;
+file . "../src/ula.vhd" "7cf9c8f126fd2a14527ea949f620c8482e9b5172" "20180622010500.941":
+  entity ula at 1( 0) + 0 on 1275;
+  architecture arq_ula of ula at 16( 333) + 0 on 1276;
+file . "../src/reg14bit.vhd" "5a7afdcb697c1047349c4b3742cf6570e658a7ec" "20180622010501.064":
+  entity reg14bit at 1( 0) + 0 on 1279;
+  architecture arq_reg14bit of reg14bit at 13( 235) + 0 on 1280;
+file . "../src/banco_reg.vhd" "200f17521baafc7534dbac0a1bf3a042231f4431" "20180622010501.143":
+  entity banco_reg at 1( 0) + 0 on 1283;
+  architecture arq_banco_reg of banco_reg at 28( 793) + 0 on 1284;
+file . "../src/pc.vhd" "81d501600a940c7ab5e4c81c8ff45a6079bad8bb" "20180622010501.249":
+  entity pc at 1( 0) + 0 on 1287;
+  architecture arq_pc of pc at 13( 217) + 0 on 1288;
+file . "../src/uc.vhd" "65082d9225f65f799414bda6eb2599a012aa35c6" "20180622010501.359":
+  entity uc at 1( 0) + 0 on 1293;
+  architecture arq_uc of uc at 27( 702) + 0 on 1294;
+file . "../src/processador.vhd" "b112300a1e36530d8fc6dcb23c76c8955dcb5941" "20180622010501.404":
+  entity processador at 1( 0) + 0 on 1295;
+  architecture arq_processador of processador at 15( 259) + 0 on 1296;
+file . "../testes/processador_teste.vhd" "6adadbddb838ed439d13ffdda42d07d5d990007f" "20180622010501.493":
+  entity processador_teste at 1( 0) + 0 on 1297;
+  architecture processador_teste of processador_teste at 11( 186) + 0 on 1298;

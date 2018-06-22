@@ -77,5 +77,6 @@ then
 	echo "gerando onda..."
 	ghdl -a ../testes/processador_teste.vhd
 	ghdl -e processador_teste
-	ghdl -r processador_teste --wave=$OUTPUT --stop-time=$STOPTIME
+	ghdl -r processador_teste --wave=$OUTPUT --stop-time=$STOPTIME --ieee-asserts=disable
+
 fi

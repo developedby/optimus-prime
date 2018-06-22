@@ -17,7 +17,10 @@ end entity;
 
 architecture arq_ram of ram is
  type mem is array (0 to 65535) of unsigned(15 downto 0);
- signal conteudo_ram : mem;
+ signal conteudo_ram : mem :=
+ (
+   others => (others => '0')
+ );
 begin
  process(clk,hab_escr)
  begin

@@ -192,7 +192,7 @@ pc_entrada <= saida_ula(14 downto 0) when orig_pc = '0' else
 
 -- Mux de seleção de entrada da ULA
 entr_ula_1 <= saida_br_1 when orig_ula_1 = "00" else --reg
-              rom_saida(7) & rom_saida(7) & rom_saida(7) & rom_saida(7) & rom_saida(7) & rom_saida(7) & rom_saida(7) & rom_saida(7) & rom_saida(7 downto 0)
+              "00000000" & rom_saida(7 downto 0)
               when orig_ula_1 = "01" else --constante
               '0' & pc_saida
               when orig_ula_1 = "10" else --pc

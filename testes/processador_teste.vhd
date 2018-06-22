@@ -27,15 +27,15 @@ begin
   process
   begin
     clk <= '0';
-    wait for 17 ns;
+    wait for 1 ns;
     clk <= '1';
-    wait for 17 ns;
+    wait for 1 ns;
   end process;
 
   process
   begin
     rst <= '1';
-    wait for 3 ns;
+    wait for 1 ps;
     rst <= '0';
     wait;
   end process;

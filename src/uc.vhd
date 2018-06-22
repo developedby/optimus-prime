@@ -111,7 +111,7 @@ begin
 			   instrucao(13 downto 3) = "00000000011"    -- MOVWI
 			   else (others=>'0');
 
-    reg_le_2 <= "0000010" when -- W
+  reg_le_2 <= "0000010" when -- W
                 instrucao(13 downto 8) = "000111" or
                 instrucao(13 downto 7) = "0000010" or
                 instrucao(13 downto 8) = "000010" or
@@ -163,7 +163,7 @@ begin
                   instrucao(13 downto 9) = "11001"
                   else "11" when --testa bit
                   instrucao(13 downto 11) = "010" or
-                  instrucao(13 downto 10) = "011"
+                  instrucao(13 downto 11) = "011"
                   else (others=>'0');
 
 	-- Habilita escrita no banco de registradores quando estado = '1'
@@ -177,7 +177,8 @@ begin
                     instrucao(13 downto 8) = "111110" or
                     instrucao(13 downto 8) = "001000" or
                     instrucao(13 downto 7) = "0000001" or
-                    instrucao(13 downto 8) = "110000"
+                    instrucao(13 downto 8) = "110000" or
+                    instrucao(13 downto 3) = "00000000010"
                     else '0';
 
 	-- Seleeciona em qual registrador escrever o dado que esta chegando
@@ -189,7 +190,8 @@ begin
                 (instrucao(13 downto 8) = "001110" and instrucao(7) = '0') or
                 instrucao(13 downto 8) = "111110" or
                 instrucao(13 downto 8) = "110000" or
-                instrucao(13 downto 8) = "111100"
+                instrucao(13 downto 8) = "111100" or
+                instrucao(13 downto 3) = "00000000010"
                 else instrucao(6 downto 0) when -- f
                 (instrucao(13 downto 8) = "000111" and instrucao(7) = '1') or
                 instrucao(13 downto 7) = "0000011" or
@@ -200,20 +202,19 @@ begin
                 else (others=>'0');
 
 	-- Habilita escrita da flag Z(zero) nas operações que o modificam
-    hab_escr_z <= '1' when
+    hab_escr_z <= estado when
                 instrucao(13 downto 8) = "000111" or --addwf
                 instrucao(13 downto 7) = "0000011" or --clrf
                 instrucao(13 downto 7) = "0000010" or --clrw
                 instrucao(13 downto 8) = "001000" or --movf
                 instrucao(13 downto 8) = "000010" or --subwfb
                 instrucao(13 downto 8) = "111110" or --addlw
-                instrucao(13 downto 8) = "111100" or --sublw
-                instrucao(13 downto 3) = "00000000010" or --moviw
-                instrucao(13 downto 3) = "00000000011" --movwi
+                instrucao(13 downto 8) = "111100" --sublw
+                --movs da ram nao ativam Z ja que nao passam ula
             else '0';
 
 	-- Habilita escrita da flag C(carry) nas operações que o modificam
-    hab_escr_c <= '1' when
+    hab_escr_c <= estado when
                 instrucao(13 downto 8) = "000111" or --addwf
                 instrucao(13 downto 8) = "000010" or --subwfb
                 instrucao(13 downto 8) = "111110" or --addlw
